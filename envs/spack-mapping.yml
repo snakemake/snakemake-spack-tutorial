@@ -1,0 +1,5 @@
+spack:
+    specs:
+      - bwa
+      - samtools
+    concretization: together

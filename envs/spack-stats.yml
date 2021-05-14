@@ -1,0 +1,6 @@
+spack:
+    specs:
+      - py-pysam
+      - py-matplotlib
+      - python@3.8.8
+    concretization: together
