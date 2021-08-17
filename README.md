@@ -97,7 +97,7 @@ The spack executable is located in the bin of the repository that you clone.
 We then can run the workflow!
 
 ```bash
-l$ snakemake --cores 1 --rerun-incomplete --use-spack
+$ snakemake --cores 1 --rerun-incomplete --use-spack
 Building DAG of jobs...
 Using shell: /bin/bash
 Provided cores: 1 (use --cores to define parallelism)
@@ -222,7 +222,6 @@ The resulting plot is kept alongside this repository to show you:
 
 [img/quals.svg](img/quals.svg)
 
-
 What will happen when you run the workflow with `--use-spack` is that a spack
 view will be created for each of your environments. This means that a `spack install`
 will be run for each environment to create the executables and other supporting
@@ -269,5 +268,6 @@ mimics a small filesystem with include, bin, lib, etc.
     └── share
 ```
 
-The add/spack integration is still being finished up (archive of environments
-is not done yet) but the basic functionality is there!
+Note that although spack has support for copy/relocate of environments, the path
+is limited in its length, so already in the snakemake metadata directory
+with a hash for the name, it's really too long to feasibly try to support.
